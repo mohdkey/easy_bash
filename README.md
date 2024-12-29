@@ -24,7 +24,7 @@ disfirewall.sh 用于扫描并且关闭linux服务系统的防火墙。
 
 提权
 Sudo_Elevate_privileges.sh sudo提权脚本
-
+Ping_Elevate_privileges.sh：低版本的Centos5-6 ping特殊权限提权
 安装wget
 install_wget.sh 若存在curl不存在wget的情况下通过下载busybox之后安装wget命令。
 
