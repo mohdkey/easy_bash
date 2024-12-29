@@ -30,6 +30,8 @@ install_wget.sh 若存在curl不存在wget的情况下通过下载busybox之后�
 
 ## 使用方法
 bash main.sh
+运行效果图如图所示
+<img width="390" alt="image" src="https://github.com/user-attachments/assets/51f75b41-164c-4895-9ac5-ed287c2276cf" />
 
 ## 下载方法
 git clone https://github.com/mohdkey/easy_bash.git
