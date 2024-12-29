@@ -30,3 +30,6 @@ install_wget.sh 若存在curl不存在wget的情况下通过下载busybox之后�
 
 ## 使用方法
 bash main.sh
+
+## 下载方法
+git clone https://github.com/mohdkey/easy_bash.git
