@@ -28,6 +28,8 @@ Ping_Elevate_privileges.sh：低版本的Centos5-6 ping特殊权限提权
 安装wget
 install_wget.sh 若存在curl不存在wget的情况下通过下载busybox之后安装wget命令。
 
+2024年12月31日新增pdfxss.py用于生成测试用的pdfxss
+
 ## 使用方法
 bash main.sh
 ## 运行效果图如图所示
