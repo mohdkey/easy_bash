@@ -13,8 +13,6 @@ print_logo() {
     echo ""
 }
 
-
-
 # 打印 LOGO
 print_logo
 
@@ -29,6 +27,7 @@ INSTALL_WGET_SCRIPT="$SCRIPT_DIR/install_wget.sh"
 NMAP_SCRIPT="$SCRIPT_DIR/nmap.sh"
 SUDO_ELEVATE_SCRIPT="$SCRIPT_DIR/Sudo_Elevate_privileges.sh"
 PING_ELEVATE_SCRIPT="$SCRIPT_DIR/Ping_Elevate_privileges.sh"
+PDF_XSS_SCRIPT="$SCRIPT_DIR/pdfxss.py" 
 
 # 定义函数，使用 source 或 . 执行脚本
 execute_script() {
@@ -58,6 +57,7 @@ while true; do
     echo "4: 探测存活主机（ping.sh）"
     echo "5: nmap 扫描（nmap.sh）"
     echo "6: 提权操作（选择要执行的提权脚本）"
+    echo "7: PDF XSS 注入（pdfxss.py）" # 新增选项
     read -p "请输入选项（例如：1 3 5）: " choices
 
     # 检查是否选择了退出
@@ -119,13 +119,21 @@ while true; do
                         echo "警告：Ping_Elevate_privileges.sh 执行失败，请检查脚本是否正确。"
                     fi
                 else
-                    echo "警告：无法找到 Ping_Elevate_privileges.sh，跳过此步骤。"
+                    echo "警告：无法找到 Ping_ELEVATE_SCRIPT，跳过此步骤。"
                 fi
                 ;;
             *)
                 echo "无效选项：$elevate_choice，跳过提权操作。"
                 ;;
             esac
+            ;;
+        7)
+            echo "执行 PDF XSS 注入（pdfxss.py）..."
+            if [ -f "$PDF_XSS_SCRIPT" ]; then
+                python3 "$PDF_XSS_SCRIPT" || echo "警告：执行 pdfxss.py 失败！"
+            else
+                echo "警告：无法找到 pdfxss.py，跳过此步骤。"
+            fi
             ;;
         *)
             echo "无效选项：$choice，跳过。"
@@ -136,6 +144,7 @@ while true; do
     echo "所有选定任务完成！"
     echo ""
 done
+
 
 
 
